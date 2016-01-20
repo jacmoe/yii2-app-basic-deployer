@@ -1,0 +1,33 @@
+# list servers
+# -------------
+prod_1:
+    host: hostname
+    user: username
+    password: password
+    stage: production
+    deploy_path: /var/www
+    app:
+        debug: false
+        stage: prod
+
+        mysql:
+            host: db_server
+            username: dbuser
+            password: dbpassword
+            dbname: dbname
+
+dev_1:
+    host: localhost
+    user: username
+    password: password
+    stage: local
+    deploy_path: /home/user/www
+    app:
+        debug: true
+        stage: dev
+
+        mysql:
+            host: localhost
+            username: dbuser
+            password: dbpassword
+            dbname: dbname
