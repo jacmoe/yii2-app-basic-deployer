@@ -3,8 +3,7 @@ require_once __DIR__ . '/deployer/recipe/configure.php';
 require_once __DIR__ . '/deployer/recipe/yii2-app-basic.php';
 
 serverList(__DIR__ . '/stage/servers.yml');
-
-//set('repository', '');
+set('repository', '{{repository}}');
 
 set('keep_releases', 2);
 
