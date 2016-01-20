@@ -2,7 +2,9 @@
 require_once __DIR__ . '/deployer/recipe/configure.php';
 require_once __DIR__ . '/deployer/recipe/yii2-app-basic.php';
 
-set('repository', 'https://github.com/jacmoe/deployer-test.git');
+serverList(__DIR__ . '/stage/servers.yml');
+
+//set('repository', '');
 
 set('keep_releases', 2);
 
@@ -16,8 +18,6 @@ task('deploy:build_assets', function () {
    upload(__DIR__ . '/web/js', '{{release_path}}/web/js');
    upload(__DIR__ . '/web/fonts', '{{release_path}}/web/fonts');
 })->desc('Build assets');
-
-serverList(__DIR__ . '/stage/servers.yml');
 
 after('deploy:shared', 'deploy:configure');
 after('deploy:run_migrations', 'deploy:build_assets');

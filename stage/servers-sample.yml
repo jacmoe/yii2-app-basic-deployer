@@ -5,6 +5,7 @@ prod_1:
     user: username
     password: password
     stage: production
+    repository: https://github.com/user/repository.git
     deploy_path: /var/www
     app:
         debug: false
