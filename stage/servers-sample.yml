@@ -9,7 +9,7 @@ prod_1:
     deploy_path: /var/www
     app:
         debug: false
-        stage: prod
+        stage: 'prod'
 
         mysql:
             host: db_server
@@ -25,7 +25,7 @@ dev_1:
     deploy_path: /home/user/www
     app:
         debug: true
-        stage: dev
+        stage: 'dev'
 
         mysql:
             host: localhost
