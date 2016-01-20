@@ -34,7 +34,7 @@ $config = [
     */
 ];
 
-if (YII_ENV_DEV) {
+if (false) {
     // configuration adjustments for 'dev' environment
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = [
