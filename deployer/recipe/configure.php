@@ -64,6 +64,7 @@ task('deploy:configure', function () {
                     if($yii_file) {
                         $deployDir = env('release_path');
                         upload($tmpFile, "$deployDir/" . $target);
+                        run('chmod +x ' . "$deployDir/" . $target);
                     } else {
                         run("mkdir -p $deployDir/shared/" . dirname($target));
                         upload($tmpFile, "$deployDir/shared/" . $target);
