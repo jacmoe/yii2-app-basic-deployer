@@ -68,7 +68,7 @@ php composer.phar create-project --prefer-dist --stability=dev jacmoe/yii2-app-b
 ## Deployment
 
 ### servers.yml
-First, create a file entitled `servers.yml` in the `stage` directory.  
+First, create a file entitled `servers.yml` in the `deployer/stage` directory.  
 You can copy the contents of `servers-sample.yml` to get you started.
 ### Create db on server
 Prior to deployment, make sure that you have created a database on the server you want to deploy to.
