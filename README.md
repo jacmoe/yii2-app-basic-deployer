@@ -90,5 +90,4 @@ CONFIGURATION
 The configuration is handled automatically from the values you wrote in `servers.yml`.
 
 **NOTES:**
-- Yii won't create the database for you, this has to be done manually before you can access it.
 - Refer to the README in the `tests` directory for information specific to basic application tests.
