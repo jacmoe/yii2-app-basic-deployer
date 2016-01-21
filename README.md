@@ -11,6 +11,14 @@ features to your application.
 [![Latest Stable Version](https://poser.pugx.org/jacmoe/yii2-app-basic-deployer/v/stable.png)](https://packagist.org/packages/jacmoe/yii2-app-basic-deployer)
 [![Total Downloads](https://poser.pugx.org/jacmoe/yii2-app-basic-deployer/downloads.png)](https://packagist.org/packages/jacmoe/yii2-app-basic-deployer)
 
+HOW IS THIS DIFFERENT FROM STANDARD BASIC APP?
+----------------------------------------------
+* This project can be deployed by Deployer
+* `config/db.php` and `yii` is generated automatically
+* An `.htaccess` is added to the `web` folder and *FollowSymlinks* is turned on.
+* Project can be served directly from source on the development machine, but this requires manual setup - namely creating `yii` and `config/db.php`.
+
+
 DIRECTORY STRUCTURE
 -------------------
 
