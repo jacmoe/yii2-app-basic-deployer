@@ -19,8 +19,8 @@ task('deploy:build_assets', function () {
 })->desc('Build assets');
 
 task('deploy:configure_composer', function () {
-  $stage = env('stage');
-  if($stage == 'local') {
+  $stage = env('app.stage');
+  if($stage == 'dev') {
     env('composer_options', 'install --verbose --no-progress --no-interaction');
   }
 })->desc('Configure composer');
