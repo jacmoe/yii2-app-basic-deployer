@@ -2,6 +2,9 @@
 require_once __DIR__ . '/deployer/recipe/configure.php';
 require_once __DIR__ . '/deployer/recipe/yii2-app-basic.php';
 
+if (!file_exists (__DIR__ . '/stage/servers.yml')) {
+  die('Please create "' . __DIR__ . '/stage/servers.yml" before continuing.' . "\n");
+}
 serverList(__DIR__ . '/stage/servers.yml');
 set('repository', '{{repository}}');
 
