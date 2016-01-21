@@ -5,14 +5,6 @@ require_once __DIR__ . '/deployer/recipe/yii2-app-basic.php';
 serverList(__DIR__ . '/stage/servers.yml');
 set('repository', '{{repository}}');
 
-$stage = env('app.stage');
-echo $stage;
-die($stage);
-
-if($stage == 'local') {
-  env('composer_options', 'install --verbose --no-progress --no-interaction');
-}
-
 set('keep_releases', 2);
 
 set('shared_files', [
@@ -26,5 +18,13 @@ task('deploy:build_assets', function () {
    upload(__DIR__ . '/web/fonts', '{{release_path}}/web/fonts');
 })->desc('Build assets');
 
+task('deploy:configure_composer', function () {
+  $stage = env('stage');
+  if($stage == 'local') {
+    env('composer_options', 'install --verbose --no-progress --no-interaction');
+  }
+})->desc('Configure composer');
+
 after('deploy:shared', 'deploy:configure');
+before('deploy:vendors', 'deploy:configure_composer');
 after('deploy:run_migrations', 'deploy:build_assets');
