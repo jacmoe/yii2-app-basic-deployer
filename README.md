@@ -35,10 +35,25 @@ REQUIREMENTS
 
 The minimum requirement by this project template that your Web server supports PHP 5.4.0.
 
+## Deployer
+
+* [Download deployer.phar](http://deployer.org/deployer.phar)
+~~~
+mv deployer.phar /usr/local/bin/dep
+chmod +x /usr/local/bin/dep
+~~~
+For more, see [Deployer - Installation](http://deployer.org/docs/installation)
+
+## Local deployment
+If you plan on using deployer to deploy locally, you need to install *openssh-server*:
+~~~
+sudo apt-get install openssh-server
+~~~
+That allows you to *ssh* into your local machine.
 
 INSTALLATION
 ------------
-### Install via Composer
+## Install via Composer
 
 If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions
 at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
@@ -50,17 +65,29 @@ php composer.phar global require "fxp/composer-asset-plugin:~1.1.1"
 php composer.phar create-project --prefer-dist --stability=dev jacmoe/yii2-app-basic-deployer basic
 ~~~
 
-Now you should be able to access the application through the following URL, assuming `basic` is the directory
-directly under the Web root.
+## Deployment
+
+### servers.yml
+First, create a file entitled `servers.yml` in the `stage` directory.  
+You can copy the contents of `servers-sample.yml` to get you started.
+### Create db on server
+Prior to deployment, make sure that you have created a database on the server you want to deploy to.
+
+### deploy command
+When you have created a server configuration file, all you need to do is run this command:
 
 ~~~
-http://localhost/basic/web/
+dep deploy production
+~~~
+or
+~~~
+dep deploy local
 ~~~
 
 
 CONFIGURATION
 -------------
-The configuration is handled automatically.
+The configuration is handled automatically from the values you wrote in `servers.yml`.
 
 **NOTES:**
 - Yii won't create the database for you, this has to be done manually before you can access it.
