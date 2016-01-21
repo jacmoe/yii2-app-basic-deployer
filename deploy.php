@@ -5,7 +5,7 @@ require_once __DIR__ . '/deployer/recipe/yii2-app-basic.php';
 serverList(__DIR__ . '/stage/servers.yml');
 set('repository', '{{repository}}');
 
-if('{{stage}}' === 'local') {
+if(env('stage') == 'local') {
   env('composer_options', 'install --verbose --no-progress --no-interaction');
 }
 
