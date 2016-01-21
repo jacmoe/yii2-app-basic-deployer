@@ -11,14 +11,6 @@ set('shared_files', [
     'config/db.php'
 ]);
 
-task('deploy:build_assets', function () {
-    runLocally('npm install');
-    runLocally('gulp build');
-    upload(__DIR__ . '/web/css', '{{release_path}}/web/css');
-    upload(__DIR__ . '/web/js', '{{release_path}}/web/js');
-    upload(__DIR__ . '/web/fonts', '{{release_path}}/web/fonts');
-})->desc('Build assets');
-
 task('deploy:configure_composer', function () {
   $stage = env('app.stage');
   if($stage == 'dev') {
@@ -28,4 +20,3 @@ task('deploy:configure_composer', function () {
 
 after('deploy:shared', 'deploy:configure');
 before('deploy:vendors', 'deploy:configure_composer');
-after('deploy:run_migrations', 'deploy:build_assets');
