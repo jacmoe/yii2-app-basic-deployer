@@ -5,6 +5,10 @@ require_once __DIR__ . '/deployer/recipe/yii2-app-basic.php';
 serverList(__DIR__ . '/stage/servers.yml');
 set('repository', '{{repository}}');
 
+if('{{stage}}' === 'local') {
+  env('composer_options', 'install --verbose --no-progress --no-interaction');
+}
+
 set('keep_releases', 2);
 
 set('shared_files', [
