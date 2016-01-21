@@ -18,6 +18,9 @@ Thumbs.db
 # composer itself is not needed
 composer.phar
 
+# ignore deployer if present
+deployer.phar
+
 # Mac DS_Store Files
 .DS_Store
 
@@ -26,5 +29,5 @@ phpunit.phar
 # local phpunit config
 /phpunit.xml
 
-# yii executable
+# yii executable - it is generated
 /yii
