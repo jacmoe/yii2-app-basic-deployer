@@ -1,4 +1,6 @@
 <?php
+// This is a modified version of
+// https://github.com/deployphp/recipes/blob/master/recipes/configure.php
 
 /**
  * Make shared_dirs and configure files from templates
