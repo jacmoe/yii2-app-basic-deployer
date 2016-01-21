@@ -18,12 +18,12 @@ DIRECTORY STRUCTURE
       commands/           contains console commands (controllers)
       config/             contains application configurations
       controllers/        contains Web controller classes
-      deployer/           contains Deployer recipes
+      deployer/recipe     contains Deployer recipes
+      deployer/shared     contains files shared between releases
+      deployer/stage      contains configuration file for Deployer
       mail/               contains view files for e-mails
       migrations/         contains migrations
       models/             contains model classes
-      shared/             contains files shared between releases
-      stage/              contains configuration file for Deployer
       tests/              contains various tests for the application
       vendor/             contains dependent 3rd-party packages
       views/              contains view files for the Web application
