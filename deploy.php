@@ -12,10 +12,11 @@ set('shared_files', [
 ]);
 
 task('deploy:build_assets', function () {
-   runLocally('gulp build');
-   upload(__DIR__ . '/web/css', '{{release_path}}/web/css');
-   upload(__DIR__ . '/web/js', '{{release_path}}/web/js');
-   upload(__DIR__ . '/web/fonts', '{{release_path}}/web/fonts');
+    runLocally('npm install');
+    runLocally('gulp build');
+    upload(__DIR__ . '/web/css', '{{release_path}}/web/css');
+    upload(__DIR__ . '/web/js', '{{release_path}}/web/js');
+    upload(__DIR__ . '/web/fonts', '{{release_path}}/web/fonts');
 })->desc('Build assets');
 
 task('deploy:configure_composer', function () {
