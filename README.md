@@ -92,7 +92,6 @@ or
 dep deploy local
 ~~~
 
-
 CONFIGURATION
 -------------
 The configuration is handled automatically from the values you wrote in `servers.yml`.
