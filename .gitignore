@@ -31,3 +31,4 @@ phpunit.phar
 
 # yii executable - it is generated
 /yii
+/composer.lock
