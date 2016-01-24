@@ -57,6 +57,15 @@ task('deploy:configure', function () {
         if (!empty($tmpFile)) {
             try {
                 $contents = $compiler($file->getContents());
+
+                // cookie validation key
+                if(basename($file) === 'web.php.tpl') {
+                  $length = 32;
+                  $bytes = openssl_random_pseudo_bytes($length);
+                  $key = strtr(substr(base64_encode($bytes), 0, $length), '+/=', '_-.');
+                  $contents = preg_replace('/(("|\')cookieValidationKey("|\')\s*=>\s*)(""|\'\')/', "\\1'$key'", $contents);
+                }
+
                 $target   = preg_replace('/\.tpl$/', '', $file->getRelativePathname());
                 // Put contents and upload tmp file to server
                 if (file_put_contents($tmpFile, $contents) > 0) {
