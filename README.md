@@ -27,7 +27,7 @@ DIRECTORY STRUCTURE
       config/             contains application configurations
       controllers/        contains Web controller classes
       deployer/recipe     contains Deployer recipes
-      deployer/shared     contains files shared between releases
+      deployer/templates  contains templates configured by Deployer
       deployer/stage      contains configuration file for Deployer
       mail/               contains view files for e-mails
       migrations/         contains migrations
