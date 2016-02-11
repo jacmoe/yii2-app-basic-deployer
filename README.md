@@ -18,6 +18,10 @@ HOW IS THIS DIFFERENT FROM STANDARD BASIC APP?
 * An `.htaccess` is added to the `web` folder and *FollowSymlinks* is turned on.
 * Project can be served directly from source on the development machine, but this requires manual setup - namely creating `yii` and `config/db.php`.
 
+HOW DOES IT WORK?
+-----------------
+See my blog post [Deploying Yii with Deployer](https://jacmoe.dk/blog/2016/january/deploying-yii-with-deployer)
+
 
 DIRECTORY STRUCTURE
 -------------------
